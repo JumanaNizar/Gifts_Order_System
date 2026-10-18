@@ -33,3 +33,20 @@ Browser (HTML / CSS / JavaScript in public/)
         → C++ server (src/main.cpp)
             → SQLite file (data/giftshop.db)
 ```
+| Part | Technology |
+|---|---|
+| Server and business rules | C++17 + cpp-httplib |
+| Database | SQLite (`data/giftshop.db`, created on first run) |
+| JSON | nlohmann/json |
+| Passwords | salted SHA-256 |
+| Pages | `public/` (HTML, CSS, JavaScript) |
+
+All libraries are already in `third_party/`. You do not need npm, PHP, or a separate database server.
+
+On first run the program creates:
+
+- the admin account
+- six sample products
+- the `data/` folder (database + uploaded photos)
+
+Login uses an `sid` cookie stored in memory. If you stop the program, everyone is logged out.
