@@ -15,3 +15,21 @@ Open **http://localhost:8080** after you start the program. Nothing is deployed 
 3. Personalize an item: printed message (max 30 characters), design style, optional photo, quantity
 4. Place an order with name, phone, and address
 5. View your own orders on **My Orders**
+
+**Admin** (`admin@giftshop.lk` / `admin123`)
+
+- Dashboard: order count, customers, sales
+- Add, edit, or hide products
+- View all orders and update status: Pending → Processing → Shipped → Delivered (or Cancelled)
+- Sales report for today, this week, or this month
+
+Prices are in Sri Lankan rupees (Rs.). The server always calculates `unit price × quantity` from the database. The total shown in the browser is not trusted.
+
+## How it is built
+
+```
+Browser (HTML / CSS / JavaScript in public/)
+    → HTTP + JSON APIs
+        → C++ server (src/main.cpp)
+            → SQLite file (data/giftshop.db)
+```
